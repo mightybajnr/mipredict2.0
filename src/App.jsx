@@ -300,7 +300,7 @@ export default function App() {
             Predict.
           </p>
           <div className="py-2 text-center text-xs text-white/50 sm:py-0 sm:text-sm">
-            Deployment test: October 10, 2026
+            Deployment test: October 10
           </div>
         </div>
       </footer>
