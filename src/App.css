@@ -1,0 +1,66 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+
+@import "tailwindcss";
+
+@theme {
+  --color-pitch: #0B0F0E;
+  --color-surface: #151B18;
+  --color-surface-raised: #1D2520;
+
+  --color-brand: #B8FF3B;
+  --color-brand-hover: #C9FF70;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #8B98A1;
+
+  --color-success: #24C982;
+  --color-danger: #FF5C5C;
+  --color-warning: #FFCA58;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+  color: #FFFFFF;
+  background: #0B0F0E;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #B8FF3B;
+  color: #0B0F0E;
+}
