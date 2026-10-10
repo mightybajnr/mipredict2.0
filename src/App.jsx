@@ -299,6 +299,9 @@ export default function App() {
             Built for the love of the game. © {new Date().getFullYear()} Mi
             Predict.
           </p>
+          <div className="py-2 text-center text-xs text-white/50 sm:py-0 sm:text-sm">
+            Deployment test: October 10, 2026
+          </div>
         </div>
       </footer>
     </main>
