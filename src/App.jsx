@@ -238,7 +238,7 @@ export default function App() {
               return (
                 <article
                   key={feature.number}
-                  className="group min-w-0 rounded-2xl border border-white/10 bg-surface p-5 transition hover:-translate-y-1 hover:border-brand/30 sm:p-7"
+                  className="group min-w-0 rounded-2xl border border-white/10 bg-surface p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 sm:p-7"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand">
