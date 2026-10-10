@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import miPredictLogo from "./assets/logos/mipredict2.0_logo_nav.svg";
+import LaunchSignup from "./components/LaunchSignup.jsx";
 
 const features = [
   {
@@ -285,6 +286,8 @@ export default function App() {
           </a>
         </div>
       </section>
+
+      <LaunchSignup />
 
       {/* Footer */}
       <footer className="border-t border-white/10 px-5 py-6 sm:px-8 sm:py-8 lg:px-12">
