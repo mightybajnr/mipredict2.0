@@ -6,11 +6,11 @@ import PredictionForm from "./PredictionForm.jsx";
 import StatusBadge from "./StatusBadge.jsx";
 import TeamCrest from "./TeamCrest.jsx";
 
-function TeamBlock({ name }) {
+function TeamBlock({ name, logo }) {
   return (
     <div className="min-w-0 text-center">
       <div className="mx-auto flex w-fit">
-        <TeamCrest name={name} />
+        <TeamCrest name={name} logo={logo} />
       </div>
       <p className="mt-3 truncate text-sm font-semibold sm:text-base">{name}</p>
     </div>
@@ -41,11 +41,11 @@ export default function MatchCard({
       </div>
 
       <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-        <TeamBlock name={match.home_team} />
+        <TeamBlock name={match.home_team} logo={match.home_team_logo} />
         <span className="text-xs font-bold text-text-secondary sm:text-sm">
           VS
         </span>
-        <TeamBlock name={match.away_team} />
+        <TeamBlock name={match.away_team} logo={match.away_team_logo} />
       </div>
 
       <p className="mt-4 flex items-center justify-center gap-1.5 text-xs text-text-secondary sm:text-sm">

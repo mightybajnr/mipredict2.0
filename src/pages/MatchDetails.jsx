@@ -15,11 +15,11 @@ import PredictionForm from "../components/matches/PredictionForm.jsx";
 import StatusBadge from "../components/matches/StatusBadge.jsx";
 import TeamCrest from "../components/matches/TeamCrest.jsx";
 
-function TeamBlock({ name }) {
+function TeamBlock({ name, logo }) {
   return (
     <div className="min-w-0 text-center">
       <div className="mx-auto flex w-fit">
-        <TeamCrest name={name} />
+        <TeamCrest name={name} logo={logo} />
       </div>
       <p className="mt-3 break-words text-sm font-semibold sm:text-base">
         {name}
@@ -134,11 +134,11 @@ export default function MatchDetails() {
           </div>
 
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-            <TeamBlock name={match.home_team} />
+            <TeamBlock name={match.home_team} logo={match.home_team_logo} />
             <span className="font-display text-lg font-bold text-text-secondary sm:text-xl">
               {hasScore ? `${match.home_score} – ${match.away_score}` : "VS"}
             </span>
-            <TeamBlock name={match.away_team} />
+            <TeamBlock name={match.away_team} logo={match.away_team_logo} />
           </div>
 
           <p className="mt-5 flex items-center justify-center gap-1.5 text-sm text-text-secondary">
