@@ -1,21 +1,10 @@
 import { Link } from "react-router-dom";
-import { CalendarDays, Trophy } from "lucide-react";
+import { ArrowRight, CalendarDays, Trophy } from "lucide-react";
 
-import Badge from "../ui/Badge.jsx";
 import { formatKickoff } from "../../utils/formatDate.js";
-import { getInitials } from "../../utils/initials.js";
-import { STATUS_VARIANTS } from "../../utils/matchStatus.js";
 import PredictionForm from "./PredictionForm.jsx";
-
-function TeamCrest({ name }) {
-  return (
-    <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 sm:h-16 sm:w-16">
-      <span className="font-display text-lg font-bold sm:text-2xl">
-        {getInitials(name)}
-      </span>
-    </span>
-  );
-}
+import StatusBadge from "./StatusBadge.jsx";
+import TeamCrest from "./TeamCrest.jsx";
 
 function TeamBlock({ name }) {
   return (
@@ -48,9 +37,7 @@ export default function MatchCard({
           <span className="truncate">{match.competition}</span>
         </span>
 
-        <Badge variant={STATUS_VARIANTS[match.status]}>
-          {match.status}
-        </Badge>
+        <StatusBadge status={match.status} />
       </div>
 
       <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
@@ -73,7 +60,10 @@ export default function MatchCard({
       )}
 
       {live && hasScore && (
-        <p className="mt-3 text-center font-display text-lg font-bold text-danger">
+        <p
+          className="mt-3 text-center font-display text-lg font-bold text-danger"
+          aria-live="polite"
+        >
           Live: {match.home_score} – {match.away_score}
         </p>
       )}
@@ -101,6 +91,16 @@ export default function MatchCard({
           </p>
         </div>
       )}
+
+      <div className="mt-4 flex justify-center border-t border-white/10 pt-4">
+        <Link
+          to={`/matches/${match.id}`}
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition hover:text-brand-hover"
+        >
+          Match details
+          <ArrowRight size={15} />
+        </Link>
+      </div>
     </article>
   );
 }

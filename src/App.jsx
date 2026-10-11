@@ -13,6 +13,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Home from "./pages/Home.jsx";
 import Matches from "./pages/Matches.jsx";
+import MatchDetails from "./pages/MatchDetails.jsx";
 import Predictions from "./pages/Predictions.jsx";
 import Leaderboard from "./pages/Leaderboard.jsx";
 import Community from "./pages/Community.jsx";
@@ -39,6 +40,7 @@ export default function App() {
         <Route element={<DashboardLayout />}>
           <Route path="/app" element={<Home />} />
           <Route path="/matches" element={<Matches />} />
+          <Route path="/matches/:id" element={<MatchDetails />} />
           <Route path="/predictions" element={<Predictions />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/community" element={<Community />} />

@@ -2,6 +2,7 @@ const FILTERS = [
   { value: "upcoming", label: "Upcoming" },
   { value: "live", label: "Live" },
   { value: "finished", label: "Finished" },
+  { value: "all", label: "All" },
 ];
 
 export default function MatchFilters({ value, onChange }) {
