@@ -27,6 +27,41 @@
 
   --font-sans: "Inter", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
+
+  --animate-brand-glow: brand-glow 2.6s ease-in-out infinite;
+  --animate-brand-float: brand-float 3.2s ease-in-out infinite;
+  --animate-loading-bar: loading-bar 1.5s ease-in-out infinite;
+
+  @keyframes brand-glow {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: scale(0.92);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.06);
+    }
+  }
+
+  @keyframes brand-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+
+  @keyframes loading-bar {
+    0% {
+      transform: translateX(-110%);
+    }
+    100% {
+      transform: translateX(320%);
+    }
+  }
 }
 
 html {
