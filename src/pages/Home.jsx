@@ -160,7 +160,7 @@ export default function Home() {
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
-        <Card className="p-5 sm:p-6">
+        <Card className="min-w-0 p-5 sm:p-6">
           <div className="mb-4 flex items-center justify-between gap-2">
             <h2 className="font-display text-lg font-semibold">
               Upcoming matches
@@ -188,7 +188,7 @@ export default function Home() {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-xs font-bold">
                     {match.home_team.slice(0, 3).toUpperCase()}
                   </span>
-                  <div className="min-w-0 flex-1 truncate text-sm font-medium">
+                  <div className="min-w-0 flex-1 text-sm font-medium">
                     <p className="truncate">
                       {match.home_team}
                       <span className="mx-1 text-text-secondary">vs</span>
@@ -213,7 +213,7 @@ export default function Home() {
           )}
         </Card>
 
-        <Card className="p-5 sm:p-6">
+        <Card className="min-w-0 p-5 sm:p-6">
           <div className="mb-4 flex items-center justify-between gap-2">
             <h2 className="font-display text-lg font-semibold">
               Recent predictions
@@ -274,7 +274,7 @@ export default function Home() {
         </Card>
       </div>
 
-      <Card className="mt-6 p-5 sm:p-6">
+      <Card className="mt-6 min-w-0 p-5 sm:p-6">
         <div className="mb-4 flex items-center justify-between gap-2">
           <h2 className="font-display text-lg font-semibold">Leaderboard</h2>
           <Link

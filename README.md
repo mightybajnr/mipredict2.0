@@ -42,6 +42,14 @@ npm test          # (backend only — see server/README.md)
 - Production environment variable: `VITE_API_URL=https://api.mipredict.com`
 - The repo ships a Cloudflare Pages Function at `client/functions/api/subscribe.js` used by the landing page email signup. If you keep it, bind a D1 database named `DB` with a `launch_signups` table (`email TEXT UNIQUE`).
 
+## SEO
+
+- `index.html` holds the primary meta (title, description, robots, theme-color, canonical) plus Open Graph and Twitter Card tags and JSON-LD (`WebSite` + `WebApplication`), all pointing at `https://mipredict.com`.
+- `public/robots.txt` allows only the landing page (`/`) and disallows the authenticated app routes; it references the sitemap.
+- `public/sitemap.xml` lists the public landing page.
+- `public/og-image.png` is the 1200×630 social share image (regenerate with any image tool, keep the dimensions).
+- These are static, so all routes share the same title/description. Add per-route meta if the app later needs distinct previews.
+
 ## Deployment smoke checklist
 
 After deploying the frontend and API:
