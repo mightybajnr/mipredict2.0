@@ -194,7 +194,7 @@ export default function Home() {
                       <span className="mx-1 text-text-secondary">vs</span>
                       {match.away_team}
                     </p>
-                    <p className="mt-0.5 truncate text-xs text-text-secondary">
+                    <p className="mt-0.5 text-xs text-text-secondary">
                       {formatKickoff(match.kickoff_at)}
                     </p>
                   </div>
@@ -245,9 +245,9 @@ export default function Home() {
               {recentActivity.map((prediction) => (
                 <div
                   key={prediction.id}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-pitch p-3"
+                  className="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-white/10 bg-pitch p-3"
                 >
-                  <div className="min-w-0 flex-1">
+                  <div className="min-w-0 grow basis-full sm:basis-0">
                     <p className="truncate text-sm font-medium">
                       {prediction.home_team}
                       <span className="mx-1 text-text-secondary">vs</span>
@@ -257,14 +257,16 @@ export default function Home() {
                       {prediction.competition}
                     </p>
                   </div>
-                  <span className="shrink-0 font-display text-sm font-bold">
-                    {prediction.predicted_home_score}
-                    <span className="mx-1 text-text-secondary">–</span>
-                    {prediction.predicted_away_score}
-                  </span>
-                  <Badge variant={STATUS_VARIANTS[prediction.status]}>
-                    {prediction.status}
-                  </Badge>
+                  <div className="ml-auto flex shrink-0 items-center gap-x-3">
+                    <span className="font-display text-sm font-bold">
+                      {prediction.predicted_home_score}
+                      <span className="mx-1 text-text-secondary">–</span>
+                      {prediction.predicted_away_score}
+                    </span>
+                    <Badge variant={STATUS_VARIANTS[prediction.status]}>
+                      {prediction.status}
+                    </Badge>
+                  </div>
                 </div>
               ))}
             </div>
