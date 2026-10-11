@@ -37,6 +37,8 @@ export default function MatchCard({
   onSubmit,
 }) {
   const finished = match.status === "finished";
+  const live = match.status === "live";
+  const hasScore = match.home_score !== null && match.away_score !== null;
 
   return (
     <article className="rounded-2xl border border-white/10 bg-surface p-5 transition hover:border-white/15 sm:p-6">
@@ -64,9 +66,15 @@ export default function MatchCard({
         {formatKickoff(match.kickoff_at)}
       </p>
 
-      {finished && (
+      {finished && hasScore && (
         <p className="mt-3 text-center font-display text-lg font-bold text-brand">
           Full time: {match.home_score} – {match.away_score}
+        </p>
+      )}
+
+      {live && hasScore && (
+        <p className="mt-3 text-center font-display text-lg font-bold text-danger">
+          Live: {match.home_score} – {match.away_score}
         </p>
       )}
 
